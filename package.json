@@ -1,0 +1,16 @@
+{
+  "name": "zillowtoynab",
+  "description": "link a ynab account to a zillow property",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saiichihashimoto/zillowtoynab.git"
+  },
+  "bugs": {
+    "url": "https://github.com/saiichihashimoto/zillowtoynab/issues"
+  },
+  "homepage": "https://github.com/saiichihashimoto/zillowtoynab/",
+  "keywords": [
+    "ynab",
+    "zillow"
+  ]
+}
