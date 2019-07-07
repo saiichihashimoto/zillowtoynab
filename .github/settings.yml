@@ -1,0 +1,6 @@
+_extends: .github
+repository:
+  name: zillowtoynab
+  description: link a ynab account to a zillow property
+  homepage: https://github.com/saiichihashimoto/zillowtoynab/
+  topics: zillow, ynab
