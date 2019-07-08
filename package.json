@@ -1,16 +1,30 @@
 {
   "name": "zillowtoynab",
   "description": "link a ynab account to a zillow property",
+  "keywords": [
+    "ynab",
+    "you need a budget",
+    "zestimate",
+    "zillow"
+  ],
+  "homepage": "https://github.com/saiichihashimoto/zillowtoynab/",
+  "bugs": {
+    "url": "https://github.com/saiichihashimoto/zillowtoynab/issues"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/saiichihashimoto/zillowtoynab.git"
   },
-  "bugs": {
-    "url": "https://github.com/saiichihashimoto/zillowtoynab/issues"
+  "eslintConfig": {
+    "extends": "saiichihashimoto"
   },
-  "homepage": "https://github.com/saiichihashimoto/zillowtoynab/",
-  "keywords": [
-    "ynab",
-    "zillow"
-  ]
+  "stylelint": {
+    "extends": "stylelint-config-saiichihashimoto"
+  },
+  "devDependencies": {
+    "eslint-config-saiichihashimoto": "1.3.2",
+    "husky": "3.0.0",
+    "lint-my-app": "3.3.43",
+    "stylelint-config-saiichihashimoto": "1.0.18"
+  }
 }
