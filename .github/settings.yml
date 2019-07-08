@@ -4,3 +4,8 @@ repository:
   description: link a ynab account to a zillow property
   homepage: https://github.com/saiichihashimoto/zillowtoynab/
   topics: ynab, you need a budget, zestimate, zillow
+branches:
+  - name: master
+    protection:
+      required_status_checks:
+        contexts: ['Semantic Pull Request', 'WIP', 'continuous-integration/travis-ci']
