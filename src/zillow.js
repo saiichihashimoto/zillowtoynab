@@ -28,7 +28,7 @@ export async function getZestimate(zpid) {
 			response: {
 				zestimate: {
 					amount,
-					'last-updated': date,
+					'last-updated': lastUpdated,
 				} = {},
 			} = {},
 		},
@@ -40,5 +40,5 @@ export async function getZestimate(zpid) {
 		throw err;
 	}
 
-	return { amount, date };
+	return { amount, date: lastUpdated.replace(/^(\d\d)\/(\d\d)\/(\d\d\d\d)$/, '$3-$1-$2') };
 }
