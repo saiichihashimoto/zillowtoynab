@@ -81,10 +81,10 @@ export async function postAdjustment({
 					account_id: accountId,
 					amount,
 					payee_name: `Zestimate®${previousAmount ? ' Adjustment' : ''}`,
-					memo:       `https://www.zillow.com/homedetails/${zpid}_zpid/#home-details-home-values`,
+					memo:       `https://www.zillow.com/homes/${zpid}_zpid`,
 					cleared:    'cleared',
 					approved:   true,
-					import_id:  `szestimate:${zpid}:${date}`,
+					import_id:  `zestimate:${zpid}:${date}`,
 				},
 			},
 		});
