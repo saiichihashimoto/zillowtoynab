@@ -63,7 +63,7 @@ export async function postAdjustment({
 	zestimate,
 	previousAmount,
 	date,
-	zpid,
+	zpId,
 }) {
 	const amount = (zestimate - previousAmount) * 1000;
 
@@ -81,10 +81,10 @@ export async function postAdjustment({
 					account_id: accountId,
 					amount,
 					payee_name: `Zestimate®${previousAmount ? ' Adjustment' : ''}`,
-					memo:       `https://www.zillow.com/homes/${zpid}_zpid`,
+					memo:       `https://www.zillow.com/homes/${zpId}_zpid`,
 					cleared:    'cleared',
 					approved:   true,
-					import_id:  `zestimate:${zpid}:${date}`,
+					import_id:  `zestimate:${zpId}:${date}`,
 				},
 			},
 		});

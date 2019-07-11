@@ -216,7 +216,7 @@ describe('ynab', () => {
 			zestimate:      1000000,
 			previousAmount: 1000,
 			date:           '2018-01-02',
-			zpid:           'ZPID',
+			zpId:           'ZPID',
 		})).resolves.toBe(true));
 
 		it('uses the correct options', async () => {
@@ -227,7 +227,7 @@ describe('ynab', () => {
 				zestimate:      1000000,
 				previousAmount: 1000,
 				date:           '2018-01-02',
-				zpid:           'ZPID',
+				zpId:           'ZPID',
 			});
 
 			expect(request).toHaveBeenCalledWith({
@@ -260,7 +260,7 @@ describe('ynab', () => {
 				zestimate:      1000000,
 				previousAmount: 0,
 				date:           '2018-01-02',
-				zpid:           'ZPID',
+				zpId:           'ZPID',
 			});
 
 			expect(request).toHaveBeenCalledWith(expect.objectContaining({
@@ -280,7 +280,7 @@ describe('ynab', () => {
 				zestimate:      1000000,
 				previousAmount: 1000000,
 				date:           '2018-01-02',
-				zpid:           'ZPID',
+				zpId:           'ZPID',
 			})).resolves.toBe(true);
 			expect(request).not.toHaveBeenCalled();
 		});
@@ -295,7 +295,7 @@ describe('ynab', () => {
 				zestimate:      1000000,
 				previousAmount: 1000,
 				date:           '2018-01-02',
-				zpid:           'ZPID',
+				zpId:           'ZPID',
 			})).rejects.toHaveProperty('statusCode', 400);
 		});
 	});
