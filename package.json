@@ -32,7 +32,7 @@
     "extends": "stylelint-config-saiichihashimoto"
   },
   "dependencies": {
-    "create-react-node-app": "3.0.22",
+    "create-react-node-app": "3.0.23",
     "fast-xml-parser": "3.12.16",
     "request": "2.88.0",
     "request-promise-native": "1.0.7"
