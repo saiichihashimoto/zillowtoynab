@@ -17,6 +17,7 @@
     "url": "https://github.com/saiichihashimoto/zillowtoynab.git"
   },
   "scripts": {
+    "build": "react-node-scripts build --no-web",
     "test": "react-node-scripts test"
   },
   "config": {
@@ -31,7 +32,7 @@
     "extends": "stylelint-config-saiichihashimoto"
   },
   "dependencies": {
-    "create-react-node-app": "3.0.15",
+    "create-react-node-app": "3.0.18",
     "fast-xml-parser": "3.12.16",
     "request": "2.88.0",
     "request-promise-native": "1.0.7"
