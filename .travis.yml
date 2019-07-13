@@ -1,7 +1,5 @@
 language: node_js
 cache: npm
-node_js:
-  - 11
 branches:
   only:
     - master
@@ -11,13 +9,15 @@ notifications:
       - saiichihashimoto@gmail.com
     on_success: never
     on_failure: always
+script:
+  - npm test -- --color --coverage
+after_success:
+  - cat ./coverage/lcov.info | npx coveralls
 jobs:
   include:
     - stage: release
-      node_js: lts/*
       deploy:
         provider: script
         skip_cleanup: true
         script:
           - npx semantic-release
-
