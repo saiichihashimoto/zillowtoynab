@@ -67,28 +67,30 @@ export async function postAdjustment({
 }) {
 	const amount = (zestimate - previousAmount) * 1000;
 
-	if (amount) {
-		await request({
-			uri:     `https://api.youneedabudget.com/v1/budgets/${budgetId}/transactions`,
-			method:  'POST',
-			json:    true,
-			headers: {
-				Authorization: `Bearer ${accessToken}`,
-			},
-			body: {
-				transaction: {
-					date,
-					account_id: accountId,
-					amount,
-					payee_name: `Zestimate®${previousAmount ? ' Adjustment' : ''}`,
-					memo:       `https://www.zillow.com/homes/${zpId}_zpid`,
-					cleared:    'cleared',
-					approved:   true,
-					import_id:  `zestimate:${zpId}:${date}`,
-				},
-			},
-		});
+	if (!amount) {
+		return false;
 	}
+
+	await request({
+		uri:     `https://api.youneedabudget.com/v1/budgets/${budgetId}/transactions`,
+		method:  'POST',
+		json:    true,
+		headers: {
+			Authorization: `Bearer ${accessToken}`,
+		},
+		body: {
+			transaction: {
+				date,
+				account_id: accountId,
+				amount,
+				payee_name: `Zestimate®${previousAmount ? ' Adjustment' : ''}`,
+				memo:       `https://www.zillow.com/homes/${zpId}_zpid`,
+				cleared:    'cleared',
+				approved:   true,
+				import_id:  `zestimate:${zpId}:${date}`,
+			},
+		},
+	});
 
 	return true;
 }

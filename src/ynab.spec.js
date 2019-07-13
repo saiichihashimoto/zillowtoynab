@@ -281,7 +281,7 @@ describe('ynab', () => {
 				previousAmount: 1000000,
 				date:           '2018-01-02',
 				zpId:           'ZPID',
-			})).resolves.toBe(true);
+			})).resolves.toBe(false);
 			expect(request).not.toHaveBeenCalled();
 		});
 
