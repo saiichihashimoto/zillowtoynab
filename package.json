@@ -32,8 +32,8 @@
     "extends": "stylelint-config-saiichihashimoto"
   },
   "dependencies": {
-    "create-react-node-app": "3.0.21",
-    "fast-xml-parser": "3.12.16",
+    "create-react-node-app": "3.0.23",
+    "fast-xml-parser": "3.12.17",
     "request": "2.88.0",
     "request-promise-native": "1.0.7"
   },
@@ -41,7 +41,7 @@
     "cz-conventional-changelog": "2.1.0",
     "eslint-config-saiichihashimoto": "1.3.3",
     "husky": "3.0.0",
-    "lint-my-app": "3.3.44",
+    "lint-my-app": "3.4.0",
     "stylelint-config-saiichihashimoto": "1.0.20"
   },
   "engines": {
