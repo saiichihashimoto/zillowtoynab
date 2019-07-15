@@ -2,18 +2,29 @@
 /* istanbul ignore file */
 import sync from './sync';
 
+import log from './log';
+
 async function cron() {
+	const syncOpts = {
+		budgetId:  process.env.BUDGET_ID,
+		accountId: process.env.ACCOUNT_ID,
+		zpId:      process.env.ZP_ID,
+	};
+
+	const logCron = log.child({ syncOpts });
+
 	try {
-		await sync({
+		logCron.info('syncing');
+
+		const success = await sync({
+			...syncOpts,
 			accessToken: process.env.YNAB_ACCESS_TOKEN,
-			budgetId:    process.env.BUDGET_ID,
-			accountId:   process.env.ACCOUNT_ID,
-			zpId:        process.env.ZP_ID,
 			zwsId:       process.env.ZWS_ID,
 		});
-		console.log('success'); // eslint-disable-line no-console
+
+		logCron.info({ success }, 'sync complete');
 	} catch (err) {
-		console.error(err); // eslint-disable-line no-console
+		logCron.error(err);
 	}
 }
 
