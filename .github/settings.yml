@@ -9,3 +9,6 @@ branches:
     protection:
       required_status_checks:
         contexts: ['Semantic Pull Request', 'WIP', 'continuous-integration/travis-ci', 'coverage/coveralls']
+  - name: gh-pages
+    protection:
+      enforce_admins: true
