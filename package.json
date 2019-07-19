@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "bunyan": "1.8.12",
-    "create-react-node-app": "3.0.24",
+    "create-react-node-app": "3.0.25",
     "fast-xml-parser": "3.12.17",
     "request": "2.88.0",
     "request-promise-native": "1.0.7"
