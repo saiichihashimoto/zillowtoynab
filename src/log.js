@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import bunyan from 'bunyan';
 
 import { name } from '../package';
