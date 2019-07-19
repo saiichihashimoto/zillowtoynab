@@ -17,8 +17,8 @@
     "url": "https://github.com/saiichihashimoto/zillowtoynab.git"
   },
   "scripts": {
-    "build": "react-node-scripts build",
-    "postbuild": "react-snap",
+    "build": "react-node-scripts build $(if [ -n \"$HEROKU\" ]; then echo --no-web; fi)",
+    "postbuild": "if [ -z \"$HEROKU\" ]; then react-snap; fi",
     "start": "react-node-scripts start",
     "test": "react-node-scripts test"
   },
