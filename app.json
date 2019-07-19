@@ -1,5 +1,6 @@
 {
   "env": {
+    "HEROKU": "1",
     "ZWS_ID": {
       "required": true
     }
