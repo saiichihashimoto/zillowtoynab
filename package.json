@@ -19,6 +19,7 @@
   "scripts": {
     "build": "react-node-scripts build",
     "postbuild": "react-snap",
+    "start": "react-node-scripts start",
     "test": "react-node-scripts test"
   },
   "config": {
