@@ -55,7 +55,7 @@
     "request-promise-native": "1.0.7"
   },
   "devDependencies": {
-    "@qiwi/semantic-release-gh-pages-plugin": "1.10.4",
+    "@qiwi/semantic-release-gh-pages-plugin": "1.10.5",
     "cz-conventional-changelog": "3.0.2",
     "eslint-config-saiichihashimoto": "2.0.23",
     "husky": "3.0.2",
