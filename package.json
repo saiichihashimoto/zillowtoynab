@@ -61,7 +61,7 @@
     "husky": "3.0.2",
     "lint-my-app": "3.7.2",
     "react-snap": "1.23.0",
-    "stylelint-config-saiichihashimoto": "2.0.6"
+    "stylelint-config-saiichihashimoto": "2.0.7"
   },
   "engines": {
     "node": "12.6.0"
