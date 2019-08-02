@@ -6,18 +6,18 @@ jest.mock('./zillow');
 jest.mock('./ynab');
 
 beforeEach(() => {
-	getAccountAmount.mockImplementation(async ({ accessToken, budgetId, accountId }) => (
-		accessToken === 'ACCESS_TOKEN' &&
-		budgetId === 'BUDGET_ID' &&
-		accountId === 'ACCOUNT_ID' &&
-		1000
+	getAccountAmount.mockImplementation(({ accessToken, budgetId, accountId }) => Promise.resolve(
+		accessToken === 'ACCESS_TOKEN'
+		&& budgetId === 'BUDGET_ID'
+		&& accountId === 'ACCOUNT_ID'
+		&& 1000
 	));
-	getZestimate.mockImplementation(async ({ zpId, zwsId }) => (
-		zpId === 'ZPID' &&
-		zwsId === 'ZWSID' &&
-		{ amount: 1000000, date: '2018-01-02' }
+	getZestimate.mockImplementation(({ zpId, zwsId }) => Promise.resolve(
+		zpId === 'ZPID'
+		&& zwsId === 'ZWSID'
+		&& { amount: 1000000, date: '2018-01-02' }
 	));
-	postAdjustment.mockImplementation(async () => true);
+	postAdjustment.mockImplementation(() => Promise.resolve(true));
 });
 
 afterEach(() => {

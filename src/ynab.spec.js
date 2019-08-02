@@ -1,5 +1,7 @@
+/* eslint-disable camelcase */
 import request from 'request-promise-native';
 import { StatusCodeError } from 'request-promise-native/errors';
+
 import { getAccountAmount, getAssetAccounts, getBudgets, postAdjustment } from './ynab';
 
 jest.mock('request-promise-native');
@@ -43,10 +45,10 @@ describe('getAccountAmount', () => {
 		});
 	});
 
-	it('rejects with statusCode', () => {
+	it('rejects with statusCode', async () => {
 		request.mockImplementation(() => Promise.reject(new StatusCodeError(400)));
 
-		return expect(getAccountAmount({
+		await expect(getAccountAmount({
 			accessToken: 'ACCESS_TOKEN',
 			budgetId:    'BUDGET_ID',
 			accountId:   'ACCOUNT_ID',
@@ -119,10 +121,10 @@ describe('getAssetAccounts', () => {
 		});
 	});
 
-	it('rejects with statusCode', () => {
+	it('rejects with statusCode', async () => {
 		request.mockImplementation(() => Promise.reject(new StatusCodeError(400)));
 
-		return expect(getAssetAccounts({ accessToken: 'ACCESS_TOKEN', budgetId: 'BUDGET_ID' })).rejects.toHaveProperty('statusCode', 400);
+		await expect(getAssetAccounts({ accessToken: 'ACCESS_TOKEN', budgetId: 'BUDGET_ID' })).rejects.toHaveProperty('statusCode', 400);
 	});
 });
 
@@ -170,10 +172,10 @@ describe('getBudgets', () => {
 		});
 	});
 
-	it('rejects with statusCode', () => {
+	it('rejects with statusCode', async () => {
 		request.mockImplementation(() => Promise.reject(new StatusCodeError(400)));
 
-		return expect(getBudgets({ accessToken: 'ACCESS_TOKEN' })).rejects.toHaveProperty('statusCode', 400);
+		await expect(getBudgets({ accessToken: 'ACCESS_TOKEN' })).rejects.toHaveProperty('statusCode', 400);
 	});
 });
 
@@ -281,13 +283,14 @@ describe('postAdjustment', () => {
 			date:           '2018-01-02',
 			zpId:           'ZPID',
 		})).resolves.toBe(false);
+
 		expect(request).not.toHaveBeenCalled();
 	});
 
-	it('rejects with statusCode', () => {
+	it('rejects with statusCode', async () => {
 		request.mockImplementation(() => Promise.reject(new StatusCodeError(400)));
 
-		return expect(postAdjustment({
+		await expect(postAdjustment({
 			accessToken:    'ACCESS_TOKEN',
 			budgetId:       'BUDGET_ID',
 			accountId:      'ACCOUNT_ID',

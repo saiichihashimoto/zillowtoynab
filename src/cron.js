@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 /* istanbul ignore file */
 import sync from './sync';
-
 import log from './log';
 
 async function cron() {

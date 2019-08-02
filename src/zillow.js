@@ -30,5 +30,5 @@ export async function getZestimate({ zpId, zwsId }) {
 		throw new StatusCodeError(code, text);
 	}
 
-	return { amount, date: lastUpdated.replace(/^(\d\d)\/(\d\d)\/(\d\d\d\d)$/, '$3-$1-$2') };
+	return { amount, date: lastUpdated.replace(/^(?<month>\d\d)\/(?<day>\d\d)\/(?<year>\d\d\d\d)$/u, '$<year>-$<month>-$<day>') };
 }

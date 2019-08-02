@@ -16,6 +16,9 @@
     "type": "git",
     "url": "https://github.com/saiichihashimoto/zillowtoynab.git"
   },
+  "bin": {
+    "zillow-to-ynab-cron": "lib/cron.js"
+  },
   "scripts": {
     "build": "react-node-scripts build $(if [ -n \"$HEROKU\" ]; then echo --no-web; fi)",
     "postbuild": "if [ -z \"$HEROKU\" ]; then react-snap; fi",
@@ -47,7 +50,8 @@
   },
   "dependencies": {
     "bunyan": "1.8.12",
-    "create-react-node-app": "3.0.27",
+    "create-react-node-app": "3.0.26",
+    "express": "4.17.1",
     "fast-xml-parser": "3.12.19",
     "react": "16.8.6",
     "react-dom": "16.8.6",

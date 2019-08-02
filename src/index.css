@@ -1,5 +1,7 @@
-/* stylelint-disable selector-max-type */
 @import-normalize;
+
+/* stylelint-disable selector-max-type */
+/* stylelint-disable selector-max-universal */
 
 *,
 ::after,
@@ -13,3 +15,5 @@ a {
 	color: inherit;
 	text-decoration: inherit;
 }
+/* stylelint-enable selector-max-type */
+/* stylelint-enable selector-max-universal */

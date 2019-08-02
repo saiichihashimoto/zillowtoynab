@@ -1,4 +1,5 @@
 import request from 'request-promise-native';
+
 import { getZestimate } from './zillow';
 
 jest.mock('request-promise-native');
@@ -26,9 +27,9 @@ describe('getZestimate', () => {
 		});
 	});
 
-	it('rejects with xml code', () => {
+	it('rejects with xml code', async () => {
 		request.mockImplementation(() => Promise.resolve('<?xml version="1.0" encoding="utf-8"?><Zestimate:zestimate xsi:schemaLocation="http://www.zillow.com/static/xsd/Zestimate.xsd https://www.zillowstatic.com/vstatic/80d5e73/static/xsd/Zestimate.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Zestimate="http://www.zillow.com/static/xsd/Zestimate.xsd"><request><zpid>ZPID</zpid></request><message><text>Error: Some Error Message</text><code>1</code></message></Zestimate:zestimate><!-- H:003  T:5ms  S:115  R:Mon Jul 08 01:31:08 PDT 2019  B:5.0.61033-master.e804620~delivery_ready.cd00c91 -->'));
 
-		return expect(getZestimate({ zpId: 'ZPID', zwsId: 'ZWSID' })).rejects.toHaveProperty('statusCode', 1);
+		await expect(getZestimate({ zpId: 'ZPID', zwsId: 'ZWSID' })).rejects.toHaveProperty('statusCode', 1);
 	});
 });

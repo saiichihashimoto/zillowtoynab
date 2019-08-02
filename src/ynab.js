@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import request from 'request-promise-native';
 
 export async function getAccountAmount({ accessToken, budgetId, accountId }) {
