@@ -68,6 +68,6 @@
     "stylelint-config-saiichihashimoto": "2.0.6"
   },
   "engines": {
-    "node": "12.6.0"
+    "node": "12.7.0"
   }
 }
