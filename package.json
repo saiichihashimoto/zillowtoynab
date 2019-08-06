@@ -50,7 +50,7 @@
   },
   "dependencies": {
     "bunyan": "1.8.12",
-    "create-react-node-app": "3.0.26",
+    "create-react-node-app": "3.0.28",
     "express": "4.17.1",
     "fast-xml-parser": "3.12.19",
     "react": "16.8.6",
@@ -65,7 +65,7 @@
     "husky": "3.0.2",
     "lint-my-app": "3.7.2",
     "react-snap": "1.23.0",
-    "stylelint-config-saiichihashimoto": "2.0.6"
+    "stylelint-config-saiichihashimoto": "2.0.7"
   },
   "engines": {
     "node": "12.7.0"
