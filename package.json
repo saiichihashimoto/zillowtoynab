@@ -57,7 +57,7 @@
   "devDependencies": {
     "@qiwi/semantic-release-gh-pages-plugin": "1.10.5",
     "cz-conventional-changelog": "3.0.2",
-    "eslint-config-saiichihashimoto": "2.0.23",
+    "eslint-config-saiichihashimoto": "2.0.24",
     "husky": "3.0.2",
     "lint-my-app": "3.7.2",
     "react-snap": "1.23.0",
