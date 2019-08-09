@@ -50,7 +50,7 @@
     "create-react-node-app": "3.0.29",
     "fast-xml-parser": "3.12.19",
     "react": "16.9.0",
-    "react-dom": "16.8.6",
+    "react-dom": "16.9.0",
     "request": "2.88.0",
     "request-promise-native": "1.0.7"
   },
