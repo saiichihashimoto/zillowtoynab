@@ -5,7 +5,7 @@ import jwt from '@feathersjs/authentication-jwt';
 export default function authentication() {
 	return (app) => {
 		app
-			.configure(auth({ secret: 'shhhh' }))
+			.configure(auth(app.get('authentication')))
 			.configure(jwt());
 
 		app.service('authentication').hooks({
