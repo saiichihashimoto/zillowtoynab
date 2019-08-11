@@ -61,7 +61,8 @@
     "react": "16.9.0",
     "react-dom": "16.9.0",
     "request": "2.88.0",
-    "request-promise-native": "1.0.7"
+    "request-promise-native": "1.0.7",
+    "throng": "4.0.0"
   },
   "devDependencies": {
     "@qiwi/semantic-release-gh-pages-plugin": "1.10.5",
