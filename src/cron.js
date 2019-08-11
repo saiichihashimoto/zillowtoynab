@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 /* istanbul ignore file */
+import './register-shutdown';
 import sync from './sync';
 import log from './log';
 
@@ -12,18 +13,18 @@ async function cron() {
 
 	const logCron = log.child({ syncOpts });
 
-	try {
-		logCron.info('syncing');
+	logCron.info('Syncing');
 
+	try {
 		const success = await sync({
 			...syncOpts,
 			accessToken: process.env.YNAB_ACCESS_TOKEN,
 			zwsId:       process.env.ZWS_ID,
 		});
 
-		logCron.info({ success }, 'sync complete');
+		logCron.info({ success }, 'Sync Complete');
 	} catch (err) {
-		logCron.error(err);
+		logCron.fatal(err);
 	}
 }
 

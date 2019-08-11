@@ -4,14 +4,11 @@ import { promisify } from 'util';
 import express from '@feathersjs/express';
 import { FeathersError } from '@feathersjs/errors';
 
+import onShutdown from './register-shutdown';
 import app from './app';
 import log from './log';
 
-const port = app.get('port');
-
-log.info({ port }, 'Server Starting');
-
-const server = app
+app
 	.use(express.notFound({ verbose: true }))
 	.use(express.errorHandler({
 		logger: {
@@ -21,27 +18,16 @@ const server = app
 					: log.warn(err)
 			),
 		},
-	}))
-	.listen(port, () => log.info({ port }, 'Server Started'));
+	}));
 
-const close = promisify(server.close.bind(server));
+const port = app.get('port');
 
-process.once('SIGUSR2', async () => {
-	log.info({ port }, 'Server Stopping');
+const logServer = log.child({ port });
 
-	await close();
+const server = app
+	.listen(port)
+	.on('listening', () => logServer.info('Server Listening'))
+	.on('close', () => logServer.info('Server Closed'))
+	.on('error', (err) => logServer.fatal(err, 'Server Error'));
 
-	log.info({ port }, 'Server Stopped');
-
-	process.kill(process.pid, 'SIGUSR2');
-});
-
-process.on('unhandledRejection', (reason) => {
-	log.fatal(reason);
-	process.exit(1);
-});
-
-process.on('uncaughtException', (err) => {
-	log.fatal(err);
-	process.exit(1);
-});
+onShutdown(promisify(server.close.bind(server)));
