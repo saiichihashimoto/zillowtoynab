@@ -63,6 +63,7 @@
     "feathers-memory": "4.0.0",
     "react": "16.9.0",
     "react-dom": "16.9.0",
+    "react-is-mounted-hook": "1.0.2",
     "request": "2.88.0",
     "request-promise-native": "1.0.7",
     "throng": "4.0.0"
