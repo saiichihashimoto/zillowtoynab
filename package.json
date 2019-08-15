@@ -56,7 +56,7 @@
     "@feathersjs/express": "1.3.1",
     "@feathersjs/feathers": "3.3.1",
     "bunyan": "1.8.12",
-    "create-react-node-app": "3.3.3",
+    "create-react-node-app": "3.3.4",
     "fast-xml-parser": "3.12.19",
     "react": "16.9.0",
     "react-dom": "16.9.0",
@@ -69,7 +69,7 @@
     "cz-conventional-changelog": "3.0.2",
     "eslint-config-saiichihashimoto": "2.0.30",
     "husky": "3.0.3",
-    "lint-my-app": "3.7.6",
+    "lint-my-app": "3.7.5",
     "react-snap": "1.23.0",
     "stylelint-config-saiichihashimoto": "2.0.7"
   },
