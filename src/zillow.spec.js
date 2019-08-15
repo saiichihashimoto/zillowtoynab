@@ -13,7 +13,7 @@ afterEach(() => {
 });
 
 describe('getZestimate', () => {
-	it('gets the zestimate', () => expect(getZestimate({ zpId: 'ZPID', zwsId: 'ZWSID' })).resolves.toEqual(expect.objectContaining({ amount: 1000, date: '2018-01-02' })));
+	it('gets the zestimate', async () => expect(await getZestimate({ zpId: 'ZPID', zwsId: 'ZWSID' })).toStrictEqual(expect.objectContaining({ amount: 1000, date: '2018-01-02' })));
 
 	it('uses the correct options', async () => {
 		await getZestimate({ zpId: 'ZPID', zwsId: 'ZWSID' });
