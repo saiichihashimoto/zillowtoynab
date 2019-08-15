@@ -1,12 +1,12 @@
 /* istanbul ignore file */
+import { useAuthentication } from 'feathers-react-hooks';
 import { useContext } from 'react';
 
-import { useFeathersAuthentication } from '../feathers-hooks';
 import FeathersAppContext from '../FeathersAppContext';
 
 function App() {
 	const app = useContext(FeathersAppContext);
-	const [isAuthenticated] = useFeathersAuthentication(app);
+	const isAuthenticated = useAuthentication(app);
 
 	return JSON.stringify(isAuthenticated);
 }
