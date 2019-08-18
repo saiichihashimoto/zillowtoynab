@@ -31,7 +31,7 @@ describe('getAccountAmount', () => {
 		}));
 	});
 
-	it('gets the amount', () => expect(getAccountAmount({ accessToken: 'ACCESS_TOKEN', budgetId: 'BUDGET_ID', accountId: 'ACCOUNT_ID' })).resolves.toBe(1000));
+	it('gets the amount', async () => expect(await getAccountAmount({ accessToken: 'ACCESS_TOKEN', budgetId: 'BUDGET_ID', accountId: 'ACCOUNT_ID' })).toBe(1000));
 
 	it('uses the correct options', async () => {
 		await getAccountAmount({ accessToken: 'ACCESS_TOKEN', budgetId: 'BUDGET_ID', accountId: 'ACCOUNT_ID' });
@@ -93,8 +93,8 @@ describe('getAssetAccounts', () => {
 		}));
 	});
 
-	it('gets the asset accounts', () => expect(getAssetAccounts({ accessToken: 'ACCESS_TOKEN', budgetId: 'BUDGET_ID' }))
-		.resolves.toEqual(expect.arrayContaining([
+	it('gets the asset accounts', async () => expect(await getAssetAccounts({ accessToken: 'ACCESS_TOKEN', budgetId: 'BUDGET_ID' }))
+		.toStrictEqual(expect.arrayContaining([
 			{
 				id:     'ACCOUNT_ID',
 				name:   'Account Name',
@@ -102,8 +102,8 @@ describe('getAssetAccounts', () => {
 			},
 		])));
 
-	it('ignores other accounts', () => expect(getAssetAccounts({ accessToken: 'ACCESS_TOKEN', budgetId: 'BUDGET_ID' }))
-		.resolves.toEqual(expect.not.arrayContaining([
+	it('ignores other accounts', async () => expect(await getAssetAccounts({ accessToken: 'ACCESS_TOKEN', budgetId: 'BUDGET_ID' }))
+		.toStrictEqual(expect.not.arrayContaining([
 			expect.objectContaining({
 				id: 'ACCOUNT_ID_2',
 			}),
@@ -158,7 +158,7 @@ describe('getBudgets', () => {
 		}));
 	});
 
-	it('gets the budgets', () => expect(getBudgets({ accessToken: 'ACCESS_TOKEN' })).resolves.toEqual([{ id: 'BUDGET_ID', name: 'Budget Name' }]));
+	it('gets the budgets', async () => expect(await getBudgets({ accessToken: 'ACCESS_TOKEN' })).toStrictEqual([{ id: 'BUDGET_ID', name: 'Budget Name' }]));
 
 	it('uses the correct options', async () => {
 		await getBudgets({ accessToken: 'ACCESS_TOKEN' });
@@ -210,7 +210,7 @@ describe('postAdjustment', () => {
 		}));
 	});
 
-	it('posts a transaction', () => expect(postAdjustment({
+	it('posts a transaction', async () => expect(await postAdjustment({
 		accessToken:    'ACCESS_TOKEN',
 		budgetId:       'BUDGET_ID',
 		accountId:      'ACCOUNT_ID',
@@ -218,7 +218,7 @@ describe('postAdjustment', () => {
 		previousAmount: 1000,
 		date:           '2018-01-02',
 		zpId:           'ZPID',
-	})).resolves.toBe(true));
+	})).toBe(true));
 
 	it('uses the correct options', async () => {
 		await postAdjustment({
@@ -274,7 +274,7 @@ describe('postAdjustment', () => {
 	});
 
 	it('does nothing with net zero adjustment', async () => {
-		await expect(postAdjustment({
+		expect(await postAdjustment({
 			accessToken:    'ACCESS_TOKEN',
 			budgetId:       'BUDGET_ID',
 			accountId:      'ACCOUNT_ID',
@@ -282,7 +282,7 @@ describe('postAdjustment', () => {
 			previousAmount: 1000000,
 			date:           '2018-01-02',
 			zpId:           'ZPID',
-		})).resolves.toBe(false);
+		})).toBe(false);
 
 		expect(request).not.toHaveBeenCalled();
 	});

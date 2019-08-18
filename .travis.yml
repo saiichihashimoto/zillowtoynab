@@ -18,9 +18,8 @@ jobs:
       if: type = pull_request
     - stage: release
       if: type = push
-      before_deploy: npm run build
+      before_deploy: cross-env REACT_APP_BACKEND_URL=https://zillowtoynab.herokuapp.com npm run build
       deploy:
         provider: script
         skip_cleanup: true
-        script:
-          - npx semantic-release
+        script: npx semantic-release
