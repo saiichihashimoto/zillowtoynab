@@ -19,6 +19,7 @@ function start() {
 						? log.error(err)
 						: log.warn(err)
 				),
+				info: (...args) => log.info(...args),
 			},
 		}));
 
