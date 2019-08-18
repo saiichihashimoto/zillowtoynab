@@ -1,0 +1,7 @@
+{
+	"port": "PORT",
+	"authentication": {
+		"secret": "shhhh",
+		"service": "users"
+	}
+}
