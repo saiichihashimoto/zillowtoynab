@@ -1,19 +1,15 @@
 /* istanbul ignore file */
-import auth from '@feathersjs/authentication';
-import jwt from '@feathersjs/authentication-jwt';
+import { AuthenticationService, JWTStrategy } from '@feathersjs/authentication';
+import { expressOauth } from '@feathersjs/authentication-oauth';
 
 export default function authentication() {
 	return (app) => {
-		app
-			.configure(auth(app.get('authentication')))
-			.configure(jwt());
+		const service = new AuthenticationService(app);
 
-		app.service('authentication').hooks({
-			before: {
-				create: [
-					auth.hooks.authenticate(['jwt']),
-				],
-			},
-		});
+		service.register('jwt', new JWTStrategy());
+
+		app
+			.use('/authentication', service)
+			.configure(expressOauth());
 	};
 }

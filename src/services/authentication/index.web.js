@@ -1,4 +1,4 @@
 /* istanbul ignore file */
-export {
-	default,
-} from '@feathersjs/authentication-client';
+import feathers from '@feathersjs/client';
+
+export default feathers.authentication;
