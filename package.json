@@ -75,7 +75,7 @@
     "cz-conventional-changelog": "3.0.2",
     "eslint-config-saiichihashimoto": "2.0.36",
     "husky": "3.0.4",
-    "lint-my-app": "3.7.13",
+    "lint-my-app": "3.7.14",
     "react-snap": "1.23.0",
     "stylelint-config-saiichihashimoto": "2.0.9"
   },
