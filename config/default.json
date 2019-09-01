@@ -2,6 +2,22 @@
 	"port": "PORT",
 	"authentication": {
 		"secret": "shhhh",
-		"service": "users"
+		"service": "users",
+		"authStrategies": [
+			"jwt",
+			"ynab"
+		],
+		"oauth": {
+			"defaults": {
+				"host": "REACT_APP_BACKEND_URL"
+			},
+			"ynab": {
+				"authorize_url": "https://app.youneedabudget.com/oauth/authorize",
+				"access_url": "https://app.youneedabudget.com/oauth/token",
+				"oauth": 2,
+				"key": "YNAB_CLIENT_ID",
+				"secret": "YNAB_CLIENT_SECRET"
+			}
+		}
 	}
 }
