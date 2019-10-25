@@ -59,7 +59,7 @@
     "@feathersjs/socketio": "4.3.4",
     "bunyan": "1.8.12",
     "create-react-node-app": "3.6.11",
-    "fast-xml-parser": "3.13.0",
+    "fast-xml-parser": "3.14.0",
     "feathers-memory": "4.0.1",
     "feathers-react-hooks": "1.1.1",
     "react": "16.10.2",
