@@ -73,11 +73,11 @@
     "@qiwi/semantic-release-gh-pages-plugin": "1.10.7",
     "cross-env": "6.0.3",
     "cz-conventional-changelog": "3.0.2",
-    "eslint-config-saiichihashimoto": "2.0.37",
+    "eslint-config-saiichihashimoto": "2.0.47",
     "husky": "3.0.9",
-    "lint-my-app": "3.7.20",
+    "lint-my-app": "3.7.22",
     "react-snap": "1.23.0",
-    "stylelint-config-saiichihashimoto": "2.0.9"
+    "stylelint-config-saiichihashimoto": "2.0.11"
   },
   "engines": {
     "node": "12.8.1"
