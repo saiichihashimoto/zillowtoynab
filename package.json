@@ -64,7 +64,7 @@
     "feathers-react-hooks": "1.1.1",
     "react": "16.12.0",
     "react-dom": "16.12.0",
-    "react-is-mounted-hook": "1.0.2",
+    "react-is-mounted-hook": "1.0.3",
     "request": "2.88.0",
     "request-promise-native": "1.0.8",
     "throng": "4.0.0"
