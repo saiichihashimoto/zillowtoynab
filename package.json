@@ -50,7 +50,7 @@
   },
   "dependencies": {
     "@feathersjs/authentication": "4.3.10",
-    "@feathersjs/authentication-oauth": "4.3.10",
+    "@feathersjs/authentication-oauth": "4.4.3",
     "@feathersjs/client": "4.4.3",
     "@feathersjs/configuration": "4.3.10",
     "@feathersjs/errors": "4.3.10",
@@ -75,7 +75,7 @@
     "cz-conventional-changelog": "3.0.2",
     "eslint-config-saiichihashimoto": "2.0.62",
     "husky": "3.1.0",
-    "lint-my-app": "3.7.30",
+    "lint-my-app": "3.7.37",
     "react-snap": "1.23.0",
     "stylelint-config-saiichihashimoto": "2.0.11"
   },
