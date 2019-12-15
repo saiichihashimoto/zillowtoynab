@@ -55,7 +55,7 @@
     "@feathersjs/configuration": "4.3.10",
     "@feathersjs/errors": "4.4.3",
     "@feathersjs/express": "4.3.10",
-    "@feathersjs/feathers": "4.3.10",
+    "@feathersjs/feathers": "4.4.3",
     "@feathersjs/socketio": "4.3.10",
     "bunyan": "1.8.12",
     "create-react-node-app": "3.6.49",
