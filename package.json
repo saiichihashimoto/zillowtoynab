@@ -58,7 +58,7 @@
     "@feathersjs/feathers": "4.4.3",
     "@feathersjs/socketio": "4.4.3",
     "bunyan": "1.8.12",
-    "create-react-node-app": "3.6.51",
+    "create-react-node-app": "3.6.52",
     "fast-xml-parser": "3.15.1",
     "feathers-memory": "4.1.0",
     "feathers-react-hooks": "1.1.1",
