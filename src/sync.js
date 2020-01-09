@@ -1,7 +1,14 @@
 import { getAccountAmount, postAdjustment } from './ynab';
 import { getZestimate } from './zillow';
 
-export default async function sync({ accessToken, budgetId, accountId, zpId, zwsId }) {
+export default async function sync({
+	accessToken,
+	accountId,
+	budgetId,
+	zpId,
+	zwsId,
+	multiplier = 1,
+}) {
 	const [
 		previousAmount,
 		{ amount: zestimate, date },
@@ -14,9 +21,9 @@ export default async function sync({ accessToken, budgetId, accountId, zpId, zws
 		accessToken,
 		budgetId,
 		accountId,
-		zestimate,
 		previousAmount,
 		date,
 		zpId,
+		zestimate: zestimate * multiplier,
 	});
 }

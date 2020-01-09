@@ -37,3 +37,17 @@ it('syncs zillow with ynab', async () => {
 		zpId:           'ZPID',
 	});
 });
+
+it('multiplies by the multiplier', async () => {
+	await sync({ accessToken: 'ACCESS_TOKEN', budgetId: 'BUDGET_ID', accountId: 'ACCOUNT_ID', zpId: 'ZPID', zwsId: 'ZWSID', multiplier: 0.5 });
+
+	expect(postAdjustment).toHaveBeenCalledWith({
+		accessToken:    'ACCESS_TOKEN',
+		budgetId:       'BUDGET_ID',
+		accountId:      'ACCOUNT_ID',
+		zestimate:      500000,
+		previousAmount: 1000,
+		date:           '2018-01-02',
+		zpId:           'ZPID',
+	});
+});

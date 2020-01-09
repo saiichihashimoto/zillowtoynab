@@ -19,6 +19,7 @@ async function cron() {
 		const success = await sync({
 			...syncOpts,
 			accessToken: process.env.YNAB_ACCESS_TOKEN,
+			multiplier:  process.env.MULTIPLIER,
 			zwsId:       process.env.ZWS_ID,
 		});
 
