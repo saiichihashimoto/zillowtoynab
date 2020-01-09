@@ -66,7 +66,7 @@ export async function postAdjustment({
 	date,
 	zpId,
 }) {
-	const amount = (zestimate - previousAmount) * 1000;
+	const amount = Math.floor((zestimate - previousAmount) * 1000);
 
 	if (!amount) {
 		return false;
