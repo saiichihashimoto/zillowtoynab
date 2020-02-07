@@ -49,16 +49,16 @@
     "extends": "stylelint-config-saiichihashimoto"
   },
   "dependencies": {
-    "@feathersjs/authentication": "4.4.3",
+    "@feathersjs/authentication": "4.5.1",
     "@feathersjs/authentication-oauth": "4.5.1",
     "@feathersjs/client": "4.5.1",
     "@feathersjs/configuration": "4.5.1",
     "@feathersjs/errors": "4.5.1",
     "@feathersjs/express": "4.5.1",
-    "@feathersjs/feathers": "4.4.3",
+    "@feathersjs/feathers": "4.5.1",
     "@feathersjs/socketio": "4.5.1",
     "bunyan": "1.8.12",
-    "create-react-node-app": "3.6.57",
+    "create-react-node-app": "3.6.66",
     "fast-xml-parser": "3.16.0",
     "feathers-memory": "4.1.0",
     "feathers-react-hooks": "1.1.1",
@@ -71,13 +71,13 @@
   },
   "devDependencies": {
     "@qiwi/semantic-release-gh-pages-plugin": "1.15.8",
-    "cross-env": "6.0.3",
-    "cz-conventional-changelog": "3.0.2",
-    "eslint-config-saiichihashimoto": "2.1.0",
-    "husky": "4.0.6",
-    "lint-my-app": "3.7.45",
+    "cross-env": "7.0.0",
+    "cz-conventional-changelog": "3.1.0",
+    "eslint-config-saiichihashimoto": "2.1.2",
+    "husky": "4.2.1",
+    "lint-my-app": "3.7.47",
     "react-snap": "1.23.0",
-    "stylelint-config-saiichihashimoto": "2.0.14"
+    "stylelint-config-saiichihashimoto": "2.0.17"
   },
   "engines": {
     "node": "12.8.1"
