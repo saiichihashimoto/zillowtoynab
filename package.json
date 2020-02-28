@@ -62,7 +62,7 @@
     "fast-xml-parser": "3.16.0",
     "feathers-memory": "4.1.0",
     "feathers-react-hooks": "1.1.1",
-    "react": "16.12.0",
+    "react": "16.13.0",
     "react-dom": "16.12.0",
     "react-is-mounted-hook": "1.0.3",
     "request": "2.88.0",
