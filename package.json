@@ -54,7 +54,7 @@
     "@feathersjs/client": "4.5.1",
     "@feathersjs/configuration": "4.5.2",
     "@feathersjs/errors": "4.5.1",
-    "@feathersjs/express": "4.5.1",
+    "@feathersjs/express": "4.5.2",
     "@feathersjs/feathers": "4.5.1",
     "@feathersjs/socketio": "4.5.1",
     "bunyan": "1.8.12",
@@ -65,7 +65,7 @@
     "react": "16.13.0",
     "react-dom": "16.13.0",
     "react-is-mounted-hook": "1.0.3",
-    "request": "2.88.0",
+    "request": "2.88.2",
     "request-promise-native": "1.0.8",
     "throng": "4.0.0"
   },

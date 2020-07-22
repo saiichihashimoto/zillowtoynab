@@ -13,6 +13,12 @@ async function cron() {
 
 	const logCron = log.child({ syncOpts });
 
+	if (new Date().getDay() !== 0) {
+		logCron.info('Skipping Sync');
+
+		return;
+	}
+
 	logCron.info('Syncing');
 
 	try {
