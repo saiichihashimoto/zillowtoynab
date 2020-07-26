@@ -49,8 +49,8 @@
     "extends": "stylelint-config-saiichihashimoto"
   },
   "dependencies": {
-    "@feathersjs/authentication": "4.5.1",
-    "@feathersjs/authentication-oauth": "4.5.1",
+    "@feathersjs/authentication": "4.5.6",
+    "@feathersjs/authentication-oauth": "4.5.6",
     "@feathersjs/client": "4.5.2",
     "@feathersjs/configuration": "4.5.2",
     "@feathersjs/errors": "4.5.1",
@@ -59,7 +59,7 @@
     "@feathersjs/socketio": "4.5.2",
     "bunyan": "1.8.13",
     "create-react-node-app": "3.6.72",
-    "fast-xml-parser": "3.16.0",
+    "fast-xml-parser": "3.17.4",
     "feathers-memory": "4.1.0",
     "feathers-react-hooks": "1.1.1",
     "react": "16.13.0",
