@@ -188,14 +188,14 @@ describe('postAdjustment', () => {
 					id:                      'TRANSACTION_ID',
 					date:                    '2018-01-02',
 					amount:                  (1000000 - 1000) * 1000,
-					memo:                    'https://www.zillow.com/homes/ZPID_zpid',
+					memo:                    'Entered automatically by ZtYNAB',
 					cleared:                 'cleared',
 					approved:                true,
 					flag_color:              null,
 					account_id:              'ACCOUNT_ID',
 					account_name:            'Account Name',
 					payee_id:                'PAYEE_ID',
-					payee_name:              'Zestimate® Adjustment',
+					payee_name:              'Reconciliation Balance Adjustment',
 					category_id:             null,
 					category_name:           null,
 					transfer_account_id:     null,
@@ -243,34 +243,14 @@ describe('postAdjustment', () => {
 					date:       '2018-01-02',
 					account_id: 'ACCOUNT_ID',
 					amount:     (1000000 - 1000) * 1000,
-					payee_name: 'Zestimate® Adjustment',
-					memo:       'https://www.zillow.com/homes/ZPID_zpid',
+					payee_name: 'Reconciliation Balance Adjustment',
+					memo:       'Entered automatically by ZtYNAB',
 					cleared:    'cleared',
 					approved:   true,
 					import_id:  'zestimate:ZPID:2018-01-02',
 				},
 			},
 		});
-	});
-
-	it('initial post isn\'t an adjustment', async () => {
-		await postAdjustment({
-			accessToken:    'ACCESS_TOKEN',
-			budgetId:       'BUDGET_ID',
-			accountId:      'ACCOUNT_ID',
-			zestimate:      1000000,
-			previousAmount: 0,
-			date:           '2018-01-02',
-			zpId:           'ZPID',
-		});
-
-		expect(request).toHaveBeenCalledWith(expect.objectContaining({
-			body: expect.objectContaining({
-				transaction: expect.objectContaining({
-					payee_name: 'Zestimate®',
-				}),
-			}),
-		}));
 	});
 
 	it('does nothing with net zero adjustment', async () => {
