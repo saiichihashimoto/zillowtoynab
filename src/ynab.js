@@ -84,7 +84,7 @@ export async function postAdjustment({
 				date,
 				account_id: accountId,
 				amount,
-				payee_name: 'Reconciliation Balance Adjustment',
+				payee_name: 'Zestimate® Balance Adjustment',
 				memo:       'Entered automatically by ZtYNAB',
 				cleared:    'cleared',
 				approved:   true,
