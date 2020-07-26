@@ -1,38 +1,72 @@
 #!/usr/bin/env node
 /* istanbul ignore file */
 import './register-shutdown';
+import { MongoClient } from 'mongodb';
+
 import sync from './sync';
 import log from './log';
 
 async function cron() {
-	const syncOpts = {
-		budgetId:  process.env.BUDGET_ID,
-		accountId: process.env.ACCOUNT_ID,
-		zpId:      process.env.ZP_ID,
-	};
-
-	const logCron = log.child({ syncOpts });
-
-	if (new Date().getDay() !== 0) {
-		logCron.info('Skipping Sync');
-
-		return;
-	}
-
-	logCron.info('Syncing');
+	let client;
 
 	try {
-		const success = await sync({
-			...syncOpts,
-			accessToken: process.env.YNAB_ACCESS_TOKEN,
-			multiplier:  process.env.MULTIPLIER,
-			zwsId:       process.env.ZWS_ID,
-		});
+		log.info('Connecting to Mongodb');
 
-		logCron.info({ success }, 'Sync Complete');
+		client = await MongoClient.connect(process.env.MONGODB_URI, { useNewUrlParser: true });
+		const db = client.db('zillowtoynab');
+
+		await Promise.all((await db.collection('connections')
+			.find({})
+			.toArray())
+			.map(async ({
+				accessToken,
+				accountId,
+				budgetId,
+				dayOfWeek,
+				multiplier,
+				zpId,
+				zwsId,
+			}) => {
+				const syncOpts = {
+					accountId,
+					budgetId,
+					dayOfWeek,
+					zpId,
+				};
+
+				const logCron = log.child({ syncOpts });
+
+				if (new Date().getDay() !== dayOfWeek) {
+					logCron.info('Skipping Sync');
+
+					return;
+				}
+
+				logCron.info('Syncing');
+
+				try {
+					logCron.info(
+						{
+							neededSync: await sync({
+								...syncOpts,
+								accessToken,
+								multiplier,
+								zwsId,
+							}),
+						},
+						'Sync Complete'
+					);
+				} catch (err) {
+					logCron.error(err);
+				}
+
+				await Promise.resolve();
+			}));
 	} catch (err) {
-		logCron.fatal(err);
+		log.fatal(err);
 	}
+
+	await client.close();
 }
 
 cron();

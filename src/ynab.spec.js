@@ -201,7 +201,7 @@ describe('postAdjustment', () => {
 					transfer_account_id:     null,
 					transfer_transaction_id: null,
 					matched_transaction_id:  null,
-					import_id:               'zestimate:ZPID:2018-01-02',
+					import_id:               'zillowtoynab:ZPID:2018-01-02',
 					deleted:                 false,
 					subtransactions:         [],
 				},
@@ -247,7 +247,7 @@ describe('postAdjustment', () => {
 					memo:       'Entered automatically by ZtYNAB',
 					cleared:    'cleared',
 					approved:   true,
-					import_id:  'zestimate:ZPID:2018-01-02',
+					import_id:  'zillowtoynab:ZPID:2018-01-02',
 				},
 			},
 		});

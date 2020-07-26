@@ -88,7 +88,7 @@ export async function postAdjustment({
 				memo:       'Entered automatically by ZtYNAB',
 				cleared:    'cleared',
 				approved:   true,
-				import_id:  `zestimate:${zpId}:${date}`,
+				import_id:  `zillowtoynab:${zpId}:${date}`,
 			},
 		},
 	});
