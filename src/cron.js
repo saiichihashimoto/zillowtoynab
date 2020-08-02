@@ -25,7 +25,6 @@ async function cron() {
 				dayOfWeek,
 				multiplier,
 				zpId,
-				zwsId,
 			}) => {
 				const syncOpts = {
 					accountId,
@@ -49,9 +48,9 @@ async function cron() {
 						{
 							neededSync: await sync({
 								...syncOpts,
+								zwsId: process.env.ZWS_ID,
 								accessToken,
 								multiplier,
-								zwsId,
 							}),
 						},
 						'Sync Complete'
