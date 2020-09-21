@@ -67,7 +67,7 @@
     "react-is-mounted-hook": "1.0.3",
     "request": "2.88.2",
     "request-promise-native": "1.0.9",
-    "throng": "4.0.0"
+    "throng": "5.0.0"
   },
   "devDependencies": {
     "@qiwi/semantic-release-gh-pages-plugin": "4.0.3",
