@@ -76,7 +76,7 @@
     "eslint-config-saiichihashimoto": "2.2.17",
     "husky": "4.3.0",
     "husky-config-saiichihashimoto": "1.2.9",
-    "stylelint-config-saiichihashimoto": "2.0.27"
+    "stylelint-config-saiichihashimoto": "2.0.28"
   },
   "engines": {
     "node": "12.8.1"
