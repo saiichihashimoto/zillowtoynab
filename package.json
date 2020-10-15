@@ -62,7 +62,7 @@
     "feathers-memory": "4.1.0",
     "feathers-react-hooks": "1.1.1",
     "mongodb": "3.6.2",
-    "react": "16.13.1",
+    "react": "16.14.0",
     "react-dom": "16.13.1",
     "react-is-mounted-hook": "1.0.3",
     "request": "2.88.2",
