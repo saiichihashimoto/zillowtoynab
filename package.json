@@ -53,7 +53,7 @@
     "@feathersjs/client": "4.5.9",
     "@feathersjs/configuration": "4.5.10",
     "@feathersjs/errors": "4.5.9",
-    "@feathersjs/express": "4.5.8",
+    "@feathersjs/express": "4.5.10",
     "@feathersjs/feathers": "4.5.10",
     "@feathersjs/socketio": "4.5.8",
     "bunyan": "1.8.14",
