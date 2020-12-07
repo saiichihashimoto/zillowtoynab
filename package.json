@@ -48,7 +48,7 @@
     "extends": "stylelint-config-saiichihashimoto"
   },
   "dependencies": {
-    "@feathersjs/authentication": "4.5.10",
+    "@feathersjs/authentication": "4.5.11",
     "@feathersjs/authentication-oauth": "4.5.8",
     "@feathersjs/client": "4.5.9",
     "@feathersjs/configuration": "4.5.10",
