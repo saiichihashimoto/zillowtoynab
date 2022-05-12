@@ -61,7 +61,7 @@
     "fast-xml-parser": "3.19.0",
     "feathers-memory": "4.1.0",
     "feathers-react-hooks": "1.1.1",
-    "mongodb": "3.6.4",
+    "mongodb": "4.6.0",
     "react": "16.14.0",
     "react-dom": "16.14.0",
     "react-is-mounted-hook": "1.0.3",
