@@ -70,7 +70,7 @@
     "throng": "5.0.0"
   },
   "devDependencies": {
-    "@qiwi/semantic-release-gh-pages-plugin": "5.0.4",
+    "@qiwi/semantic-release-gh-pages-plugin": "5.2.3",
     "cross-env": "7.0.3",
     "cz-conventional-changelog": "3.3.0",
     "eslint-config-saiichihashimoto": "2.2.17",
